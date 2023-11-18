@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  cloud-spanner:
+    image: gcr.io/cloud-spanner-emulator/emulator
+    container_name: cloud-spanner
+    ports:
+      # gRPC リクエスト用
+      - "9010:9010"
+      # REST リクエスト用
+      - "9020:9020"
+  cloud-strage:
+    image: fsouza/fake-gcs-server
+    container_name: gcs
+    ports:
+      - "4443:4443"
+    volumes:
+      # 作成したいバケットをdata配下に設定しておくことでバケットを作成することもできる(例:/date/sample)
+      - ./data:/data
+    # https からhttp へ変更
+    command: -scheme http
