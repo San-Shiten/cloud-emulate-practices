@@ -5,6 +5,9 @@ services:
     image: mcr.microsoft.com/azure-storage/azurite
     container_name: azurite
     ports:
+      # Blob Storage: 10000
+      # Queue Storage: 10001
+      # Table Storage: 10002
       - "10000-10002:10000-10002"
     volumes:
       - ./data:/data

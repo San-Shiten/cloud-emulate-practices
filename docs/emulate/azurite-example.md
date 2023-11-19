@@ -12,7 +12,7 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 ## Azuite の導入
 
-[Azrite ディレクトリ](../../emulater/Azurirte/)内でdocker-composeを実行
+[Azrite ディレクトリ](../../emulater/Azurite/)内でdocker-composeを実行
 
 ```bash
 docker-compose up -d
@@ -97,7 +97,9 @@ export AZURE_STORAGE_CONNECTION_STRING="DefaultEndpointsProtocol=http;AccountNam
   az storage entity query --table-name sampletable
   ```
 
-  ```データ削除
+- データ削除
+
+  ```bash
   az storage entity delete --table-name sampletable --partition-key "001" --row-key "001"
   ```
 
