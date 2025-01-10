@@ -56,7 +56,7 @@ Ubuntuの初回起動時UserとPasswordを登録する。
 - get-docker.shを削除する
 
   ```bash
-  rm sh get-docker.sh
+  rm get-docker.sh
   ```
 
 #### docker-compose のインストール
